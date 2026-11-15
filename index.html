@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Team Smandych Muay Thai &amp; Kickboxing · Downtown Calgary · Free trial class</title>
+  <meta name="description" content="Muay Thai and kickboxing in downtown Calgary since 2010. All ages 5+ and all levels. Book a free trial class.">
+  <!-- Concept preview by Femik — keep out of search results until the gym approves it -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Contact strip: address + tap-to-call on every page -->
+  <div class="strip">
+    <a class="strip__item" id="stripAddress" href="#" target="_blank" rel="noopener">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      <span>#200 – 555 11 Ave SW, Calgary</span>
+    </a>
+    <a class="strip__item strip__phone" data-tel href="tel:+14032634357">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span>(403) 263-4357</span>
+    </a>
+  </div>
+
+  <header class="header" id="top">
+    <a class="brand" href="#top" aria-label="Team Smandych home">
+      <img src="assets/img/emblem.webp" width="120" height="85" alt="">
+      <span class="brand__text"><b>Team Smandych</b><small>Muay Thai &amp; Kickboxing</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#today">Schedule</a>
+      <a href="#classes">Classes</a>
+      <a href="#coaches">Coaches</a>
+      <a href="#events">Events</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="btn btn--red btn--sm header__cta" type="button" data-book>Book a free trial class</button>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <img class="hero__bg" src="assets/img/class-bag-work.webp" alt="" aria-hidden="true">
+      <div class="hero__inner">
+        <p class="eyebrow"><span class="dot"></span> Downtown Calgary · Since 2010</p>
+        <h1>Train Muay Thai in downtown Calgary.<br><em>Your first class is free.</em></h1>
+        <p class="hero__lead">All ages 5 and up, all levels — from getting in shape to stepping into the ring.
+          Coached by the fighters who built the gym.</p>
+        <div class="hero__ctas">
+          <button class="btn btn--red btn--lg" type="button" data-book>Book a free trial class</button>
+          <a class="btn btn--ghost" href="#today">See today's classes</a>
+        </div>
+        <ul class="proof">
+          <li><b>26–5–2</b><span>Trevor “TNT” pro record</span></li>
+          <li><b>WKA</b><span>Nathan: former world champion</span></li>
+          <li><b>5+</b><span>Kids, teens &amp; adults</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TODAY / WEEK SCHEDULE -->
+    <section class="section" id="today" aria-labelledby="todayTitle">
+      <div class="wrap">
+        <div class="sched__head">
+          <div>
+            <p class="eyebrow eyebrow--gold">Live from the gym schedule</p>
+            <h2 id="todayTitle">Today at the gym</h2>
+            <p class="status" id="gymStatus" aria-live="polite"></p>
+          </div>
+          <button class="btn btn--ghost btn--sm print-btn" type="button" id="printBtn">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2M6 14h12v7H6z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Printable schedule
+          </button>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Day" id="dayTabs"></div>
+        <ol class="slots" id="slots" aria-live="polite"></ol>
+        <p class="note">Booking a class? Arrive 10–15 minutes early so we can get you set up.</p>
+      </div>
+    </section>
+
+    <!-- FIRST CLASS -->
+    <section class="section section--dark" id="first-class" aria-labelledby="fcTitle">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--gold">New here?</p>
+        <h2 id="fcTitle">Your first class, step by step</h2>
+        <ol class="steps">
+          <li><span class="steps__n">1</span><h3>Pick a class</h3>
+            <p>Choose a beginner-friendly class that suits your day. It's free — no membership needed to try.</p></li>
+          <li><span class="steps__n">2</span><h3>Arrive 10–15 min early</h3>
+            <p>Head up to #200 at 555 11 Ave SW, above Singapore Sam's. We'll get you set up before class.</p></li>
+          <li><span class="steps__n">3</span><h3>Train with a qualified instructor</h3>
+            <p>What to bring and gear for your first class: <span class="tbc">[a confirmar]</span></p></li>
+        </ol>
+        <button class="btn btn--red btn--lg" type="button" data-book>Book a free trial class</button>
+      </div>
+    </section>
+
+    <!-- CLASSES -->
+    <section class="section" id="classes" aria-labelledby="clTitle">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--gold">Classes</p>
+        <h2 id="clTitle">Start here</h2>
+        <div class="cards" id="startCards"></div>
+        <details class="all-classes">
+          <summary>All 14 classes</summary>
+          <ul id="allClasses"></ul>
+          <p class="note">Full description for each class — who it's for, level, what to bring and who teaches it: <span class="tbc">[a confirmar]</span></p>
+        </details>
+      </div>
+    </section>
+
+    <!-- COACHES -->
+    <section class="section section--dark" id="coaches" aria-labelledby="coTitle">
+      <div class="wrap coaches">
+        <figure class="coaches__photo">
+          <img src="assets/img/owners-trevor-nathan.webp" width="888" height="596" loading="lazy"
+               alt="Trevor and Nathan Smandych, founders of Team Smandych, at the gym">
+          <figcaption>Brothers Trevor &amp; Nathan Smandych founded the gym in 2010.</figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow eyebrow--gold">Coaches</p>
+          <h2 id="coTitle">Learn from real fighters</h2>
+          <div id="coachList" class="coach-list"></div>
+          <p class="note">Plus 20 more instructors on the team — profiles <span class="tbc">[a confirmar]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="section" id="events" aria-labelledby="evTitle">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--gold">Events &amp; seminars</p>
+        <h2 id="evTitle">Seminars with world champions</h2>
+        <div class="event">
+          <div class="event__date"><span>Next</span><b>TBC</b></div>
+          <div>
+            <h3>Next seminar or fight night</h3>
+            <p>Date, guest and online sign-up: <span class="tbc">[a confirmar]</span></p>
+            <p class="event__past">Past: seminar with <b>John Wayne Parr</b>, 10× world champion — about 3× the usual engagement on Instagram.</p>
+          </div>
+        </div>
+        <a class="btn btn--ghost" data-ig href="https://www.instagram.com/teamsmandych/" target="_blank" rel="noopener">Follow @teamsmandych for announcements</a>
+      </div>
+    </section>
+
+    <!-- FACILITY -->
+    <section class="section section--dark" id="facility" aria-labelledby="faTitle">
+      <div class="wrap facility">
+        <figure>
+          <img src="assets/img/facility-front-desk.webp" width="892" height="668" loading="lazy"
+               alt="Team Smandych front desk with gym gear on the wall and the training floor and ring behind">
+          <figcaption>Front desk, gear wall and the training floor, with the ring at the back.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/class-roundhouse-kick.webp" width="592" height="1016" loading="lazy"
+               alt="Fighter throwing a roundhouse kick on a heavy bag">
+          <figcaption>Heavy bags line the training floor.</figcaption>
+        </figure>
+        <div class="facility__text">
+          <p class="eyebrow eyebrow--gold">The gym</p>
+          <h2 id="faTitle">Built for training</h2>
+          <p>Members get every class plus open gym hours. Size, equipment list, change rooms and amenities: <span class="tbc">[a confirmar]</span></p>
+          <p><b>Team gear</b> — hoodies, toques and tees are sold at the front desk. Online shop coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="section" id="visit" aria-labelledby="viTitle">
+      <div class="wrap visit">
+        <div>
+          <p class="eyebrow eyebrow--gold">Visit</p>
+          <h2 id="viTitle">Find us downtown</h2>
+          <address>
+            <b>Team Smandych Muay Thai &amp; Kickboxing</b><br>
+            #200 – 555 11 Ave SW<br>Calgary, AB T2R 1P6<br>
+            <span class="muted">Upstairs, above Singapore Sam's</span>
+          </address>
+          <div class="visit__actions">
+            <a class="btn btn--red" id="dirBtn" href="#" target="_blank" rel="noopener">Get directions</a>
+            <a class="btn btn--ghost" data-tel href="tel:+14032634357">Call (403) 263-4357</a>
+          </div>
+          <h3>Parking</h3>
+          <p>Parking details as text: <span class="tbc">[a confirmar]</span></p>
+          <h3>Membership</h3>
+          <p>One membership gives you every class and open gym. Current monthly price and cancellation terms: <span class="tbc">[a confirmar]</span></p>
+        </div>
+        <img class="visit__badge" src="assets/img/badge.webp" width="300" height="300" loading="lazy" alt="Team Smandych elephant badge">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <img src="assets/img/wordmark-silver.svg" class="footer__wm" width="300" height="173" alt="Team Smandych Muay Thai & Kickboxing">
+      </div>
+      <div>
+        <h4>Address</h4>
+        <p>#200 – 555 11 Ave SW<br>Calgary, AB T2R 1P6</p>
+        <a data-tel href="tel:+14032634357">(403) 263-4357</a>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p id="footHours">Weekdays: classes from 9:00 am · closed 1:30–4:30 pm<br>Full staffed hours <span class="tbc">[a confirmar]</span></p>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a class="social" data-ig href="https://www.instagram.com/teamsmandych/" target="_blank" rel="noopener" aria-label="Team Smandych on Instagram">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3.1 0-4.1.1-4.4.2-5.7 2.6-5.8 5.8C2 8.9 2 9.3 2 12s0 3.1.1 4.1c.2 3.2 1.5 5.6 5.8 5.8 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c3.2-.2 5.6-1.5 5.8-5.8.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c-.2-3.2-1.5-5.6-5.8-5.8C15.1 2 14.7 2 12 2z"/></svg>
+          @teamsmandych
+        </a>
+      </div>
+    </div>
+    <p class="footer__legal wrap">Concept preview by Femik for Team Smandych — not the live site.</p>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="dock" id="dock">
+    <a class="dock__call" data-tel href="tel:+14032634357" aria-label="Call Team Smandych">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+    <button class="btn btn--red dock__book" type="button" data-book>Book a free trial class</button>
+  </div>
+
+  <!-- Booking sheet -->
+  <div class="sheet" id="sheet" hidden>
+    <div class="sheet__backdrop" data-close></div>
+    <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <div class="sheet__top">
+        <ol class="progress" aria-hidden="true"><li></li><li></li><li></li></ol>
+        <button class="sheet__x" type="button" data-close aria-label="Close">×</button>
+      </div>
+
+      <div class="step" data-step="1">
+        <h2 id="sheetTitle">Pick your free class</h2>
+        <p class="muted">Beginner-friendly classes in the next 7 days.</p>
+        <div id="pickList" class="pick"></div>
+      </div>
+
+      <form class="step" data-step="2" id="bookForm" novalidate hidden>
+        <h2>Your details</h2>
+        <p class="chosen" id="chosen1"></p>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+        <fieldset>
+          <legend>Who's training?</legend>
+          <label class="chip"><input type="radio" name="who" value="Adult" checked><span>Adult</span></label>
+          <label class="chip"><input type="radio" name="who" value="Teen"><span>Teen</span></label>
+          <label class="chip"><input type="radio" name="who" value="Child (5+)"><span>Child 5+</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Experience</legend>
+          <label class="chip"><input type="radio" name="exp" value="None" checked><span>None</span></label>
+          <label class="chip"><input type="radio" name="exp" value="Some"><span>Some</span></label>
+          <label class="chip"><input type="radio" name="exp" value="Competitive"><span>Competitive</span></label>
+        </fieldset>
+        <p class="form-error" id="formError" role="alert"></p>
+        <div class="step__nav">
+          <button class="btn btn--ghost" type="button" data-back>Back</button>
+          <button class="btn btn--red" type="submit">Continue</button>
+        </div>
+      </form>
+
+      <div class="step" data-step="3" hidden>
+        <h2>Almost there</h2>
+        <p class="chosen" id="chosen2"></p>
+        <a class="btn btn--red btn--block" id="sendReq" href="#">Send my free-class request</a>
+        <a class="btn btn--ghost btn--block" data-tel href="tel:+14032634357">Or call (403) 263-4357</a>
+        <p class="muted small" id="mbNote">Mindbody booking link: <span class="tbc">[a confirmar]</span></p>
+        <h3>What happens next</h3>
+        <ol class="next">
+          <li>The gym confirms your spot by email or phone.</li>
+          <li>Arrive 10–15 minutes before class.</li>
+          <li>We'll get you set up — your first class is on us.</li>
+        </ol>
+        <div class="step__nav"><button class="btn btn--ghost" type="button" data-back>Back</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Print-only week -->
+  <section class="print-week" id="printWeek" aria-hidden="true"></section>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
