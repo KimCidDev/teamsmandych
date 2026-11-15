@@ -5,7 +5,7 @@ Rebuilt by Femik from the low-resolution logo files on teamsmandych.ca and Insta
 | Folder | Contents |
 |---|---|
 | `svg/` | 24 vector files: lockups, wordmark, emblem (colour, mono, silhouettes), badges, app icon |
-| `png/` | Every SVG exported at 512, 1024 and 2048 px wide |
+| `png/` | Every SVG exported at 512, 1024 and 2048 px wide, plus `emblem-original-small-raster.png` (the original drawing, cleaned, for sizes under ~150 px) |
 | `favicon/` | favicon.ico + 16–512 px icons |
 | `photos/` | 4 gym photos, denoised and upscaled 2× from screen captures |
 

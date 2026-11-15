@@ -59,16 +59,16 @@ p{margin:0 0 1em}
 
 /* Hero — crisp vector emblem on the brand's green glow. Optional HD photo: add class hero--photo + <img class="hero__bg"> */
 .hero{position:relative;overflow:hidden;background:
-  radial-gradient(ellipse 80% 55% at 50% 22%,rgba(52,178,90,.42) 0%,rgba(15,61,34,.55) 38%,rgba(9,11,10,0) 72%),
+  radial-gradient(ellipse 90% 60% at 30% 0%,rgba(52,178,90,.42) 0%,rgba(15,61,34,.55) 38%,rgba(9,11,10,0) 72%),
   var(--black)}
 .hero::before{content:"";position:absolute;inset:0;opacity:.18;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,transparent 0 10px,var(--green) 10px 14px,transparent 14px 24px);opacity:.5}
 .hero__bg{display:none}
 .hero--photo .hero__bg{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero__inner{position:relative;z-index:1;padding:28px 20px 40px;max-width:1120px;margin:0 auto;width:100%;display:grid;gap:8px}
-.hero__emblem{width:min(78vw,340px);margin:0 auto -6px;filter:drop-shadow(0 18px 40px rgba(0,0,0,.6)) drop-shadow(0 0 30px rgba(52,178,90,.25))}
-.hero h1{font-size:clamp(2.5rem,11.5vw,5rem);margin-bottom:.3em}
+.hero__inner{position:relative;z-index:1;padding:36px 20px 36px;max-width:1120px;margin:0 auto;width:100%;display:grid;gap:8px}
+.hero__wordmark{display:none}
+.hero h1{font-size:clamp(2.4rem,10.5vw,4.6rem);margin-bottom:.3em}
 .hero h1 em{font-style:normal;color:var(--green-hi)}
 .hero__lead{font-size:1.08rem;max-width:34em;color:#dfe5e0}
 .hero__ctas{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 26px}
@@ -161,7 +161,7 @@ figcaption{color:var(--muted);font-size:.85rem;margin-top:8px}
 .facility figure:nth-child(2) img{max-height:420px;width:100%;object-fit:cover}
 
 /* Visit */
-.visit{display:grid;gap:24px;align-items:start}
+.visit{display:grid;gap:24px;align-items:start;max-width:720px}
 address{font-style:normal;font-size:1.1rem;line-height:1.5;margin-bottom:18px}
 .visit__actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
 .visit h3{margin-top:18px}
@@ -226,7 +226,7 @@ body.sheet-open{overflow:hidden}
   .strip{justify-content:flex-end;gap:28px;padding:8px 32px}
   .header{padding:10px 32px}
   .hero__inner{padding:64px 32px 56px;grid-template-columns:1.25fr .9fr;align-items:center;column-gap:40px}
-  .hero__emblem{grid-column:2;grid-row:1/4;align-self:center;width:100%;max-width:440px;margin:0}
+  .hero__wordmark{display:block;grid-column:2;grid-row:1/4;align-self:center;width:100%;max-width:520px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6))}
   .hero{background:radial-gradient(ellipse 55% 70% at 72% 40%,rgba(52,178,90,.4) 0%,rgba(15,61,34,.5) 40%,rgba(9,11,10,0) 75%),var(--black)}
   .hero__ctas .btn--lg{flex:0 0 auto}
   .proof{max-width:560px}
@@ -235,7 +235,6 @@ body.sheet-open{overflow:hidden}
   .coaches{grid-template-columns:1fr 1fr;align-items:center}
   .facility{grid-template-columns:1.4fr .8fr}
   .facility__text{grid-column:1/-1}
-  .visit{grid-template-columns:1.4fr .6fr}
   .footer__grid{grid-template-columns:1.3fr 1fr 1fr 1fr}
   .sheet__panel{left:50%;right:auto;bottom:50%;transform:translate(-50%,50%);width:min(520px,94vw);border-radius:22px;animation:none}
   .steps{grid-template-columns:repeat(3,1fr)}
