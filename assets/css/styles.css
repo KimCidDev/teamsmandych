@@ -57,17 +57,17 @@ p{margin:0 0 1em}
 .nav{display:none}
 .header__cta{display:none}
 
-/* Hero — crisp vector emblem on the brand's green glow. Optional HD photo: add class hero--photo + <img class="hero__bg"> */
+/* Hero — real gym photo (HD) + headline on the brand-green glow */
 .hero{position:relative;overflow:hidden;background:
   radial-gradient(ellipse 90% 60% at 30% 0%,rgba(52,178,90,.42) 0%,rgba(15,61,34,.55) 38%,rgba(9,11,10,0) 72%),
   var(--black)}
 .hero::before{content:"";position:absolute;inset:0;opacity:.18;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(90deg,transparent 0 10px,var(--green) 10px 14px,transparent 14px 24px);opacity:.5}
-.hero__bg{display:none}
-.hero--photo .hero__bg{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero__inner{position:relative;z-index:1;padding:36px 20px 36px;max-width:1120px;margin:0 auto;width:100%;display:grid;gap:8px}
-.hero__wordmark{display:none}
+.hero__photo{position:relative;margin:0;aspect-ratio:16/10;overflow:hidden;z-index:1}
+.hero__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero__photo::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(180deg,rgba(9,11,10,0),var(--black))}
+.hero__inner{position:relative;z-index:2;padding:4px 20px 36px;max-width:1120px;margin:-28px auto 0;width:100%;display:grid;gap:8px}
 .hero h1{font-size:clamp(2.4rem,10.5vw,4.6rem);margin-bottom:.3em}
 .hero h1 em{font-style:normal;color:var(--green-hi)}
 .hero__lead{font-size:1.08rem;max-width:34em;color:#dfe5e0}
@@ -158,7 +158,7 @@ figcaption{color:var(--muted);font-size:.85rem;margin-top:8px}
 /* Facility */
 .facility{display:grid;gap:18px}
 .facility figure{margin:0}
-.facility figure:nth-child(2) img{max-height:420px;width:100%;object-fit:cover}
+.facility img{width:100%}
 
 /* Visit */
 .visit{display:grid;gap:24px;align-items:start;max-width:720px}
@@ -225,21 +225,25 @@ body.sheet-open{overflow:hidden}
 @media (min-width:720px){
   .strip{justify-content:flex-end;gap:28px;padding:8px 32px}
   .header{padding:10px 32px}
-  .hero__inner{padding:64px 32px 56px;grid-template-columns:1.25fr .9fr;align-items:center;column-gap:40px}
-  .hero__wordmark{display:block;grid-column:2;grid-row:1/4;align-self:center;width:100%;max-width:520px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6))}
-  .hero{background:radial-gradient(ellipse 55% 70% at 72% 40%,rgba(52,178,90,.4) 0%,rgba(15,61,34,.5) 40%,rgba(9,11,10,0) 75%),var(--black)}
+  .hero__inner{padding:40px 32px 56px;margin-top:-60px}
+  .hero__photo{aspect-ratio:21/9}
   .hero__ctas .btn--lg{flex:0 0 auto}
   .proof{max-width:560px}
   .cards{grid-template-columns:repeat(2,1fr)}
   .all-classes ul{columns:2}
   .coaches{grid-template-columns:1fr 1fr;align-items:center}
-  .facility{grid-template-columns:1.4fr .8fr}
+  .facility{grid-template-columns:1.25fr 1fr;align-items:start}
   .facility__text{grid-column:1/-1}
   .footer__grid{grid-template-columns:1.3fr 1fr 1fr 1fr}
   .sheet__panel{left:50%;right:auto;bottom:50%;transform:translate(-50%,50%);width:min(520px,94vw);border-radius:22px;animation:none}
   .steps{grid-template-columns:repeat(3,1fr)}
 }
 @media (min-width:1000px){
+  .hero{display:flex;align-items:center;min-height:min(78vh,700px)}
+  .hero__photo{aspect-ratio:auto;position:absolute;right:0;top:0;bottom:0;width:56%}
+  .hero__photo img{object-position:18% 60%}
+  .hero__photo::after{inset:0 auto 0 0;width:30%;height:auto;background:linear-gradient(90deg,var(--black),rgba(9,11,10,0))}
+  .hero__inner{margin:0;padding:64px 0 64px 48px;max-width:42%}
   body{padding-bottom:0}
   .dock{display:none}
   .nav{display:flex;gap:22px}
@@ -265,40 +269,24 @@ body.sheet-open{overflow:hidden}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-/* ---------- Intro: wall breaks, elephant appears (assets/js/intro.js) ---------- */
+/* ---------- Intro: a small brick wall (logo-sized) collapses and the elephant appears — assets/js/intro.js ---------- */
 .intro{display:none}
-.intro-on .intro{display:block;position:fixed;inset:0;z-index:100;overflow:hidden;background:#050605;cursor:pointer;transition:opacity .35s ease}
+.intro-on .intro{display:flex;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;background:var(--black);cursor:pointer;transition:opacity .4s ease}
 .intro-on body{overflow:hidden}
 .intro.is-out{opacity:0;pointer-events:none}
-.intro__stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding-bottom:12vh;
-  background:radial-gradient(circle at 50% 44%,rgba(52,178,90,.38) 0%,rgba(15,61,34,.45) 28%,rgba(5,6,5,0) 60%)}
-.intro__elephant{width:170px;height:auto;opacity:0;transform:scale(.72);filter:drop-shadow(0 10px 24px rgba(0,0,0,.7)) drop-shadow(0 0 24px rgba(52,178,90,.35))}
-.intro__wm{width:min(62vw,260px);height:auto;opacity:0;transform:translateY(10px)}
-.intro.is-reveal .intro__elephant{animation:introPunch .55s cubic-bezier(.2,1.4,.4,1) forwards}
-.intro.is-reveal .intro__wm{animation:introUp .45s .18s ease-out forwards}
-@keyframes introPunch{0%{opacity:0;transform:scale(.72)}60%{opacity:1;transform:scale(1.07)}100%{opacity:1;transform:scale(1)}}
-@keyframes introUp{to{opacity:1;transform:none}}
+.intro__box{position:relative;width:216px;height:150px}
+.intro__logo{position:absolute;inset:0;margin:auto;width:200px;height:auto;opacity:0;transform:scale(.9);transition:opacity .45s ease,transform .6s cubic-bezier(.2,1.3,.4,1);
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.6))}
+.intro__glow{position:absolute;left:50%;top:50%;width:320px;height:320px;margin:-160px 0 0 -160px;border-radius:50%;opacity:0;transition:opacity .6s ease;
+  background:radial-gradient(circle,rgba(52,178,90,.28),rgba(52,178,90,0) 65%)}
+.intro.is-reveal .intro__logo{opacity:1;transform:none}
+.intro.is-reveal .intro__glow{opacity:1}
 .intro__wall{position:absolute;inset:0}
-.intro__shard{position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse at 50% 44%,rgba(255,255,255,.05),rgba(0,0,0,.45) 75%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .58 0 0 0 0 .56 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E"),
-    #1f2320;
-  background-size:100% 100%,240px 240px,auto;
-  box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
-.intro.is-break .intro__shard{animation:introShard .75s var(--delay,0ms) cubic-bezier(.45,0,.9,.6) forwards;will-change:transform,opacity}
-@keyframes introShard{to{transform:translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.92);opacity:0}}
-.intro__cracks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.intro__cracks path{fill:none;stroke:#050605;stroke-width:3;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 1px 0 rgba(255,255,255,.12))}
-.intro.is-crack .intro__cracks path{transition:stroke-dashoffset .3s ease-out;stroke-dashoffset:0}
-.intro.is-break .intro__cracks{opacity:0;transition:opacity .15s}
-.intro__flash{position:absolute;left:50%;top:44%;width:30vmax;height:30vmax;margin:-15vmax 0 0 -15vmax;border-radius:50%;opacity:0;pointer-events:none;
-  background:radial-gradient(circle,rgba(255,255,255,.9),rgba(95,209,127,.35) 30%,rgba(0,0,0,0) 65%)}
-.intro.is-impact .intro__flash{animation:introFlash .35s ease-out}
-.intro.is-impact .intro__wall{animation:introShake .18s linear}
-@keyframes introFlash{0%{opacity:0;transform:scale(.4)}30%{opacity:1}100%{opacity:0;transform:scale(1.4)}}
-@keyframes introShake{25%{transform:translate(-6px,3px)}50%{transform:translate(5px,-4px)}75%{transform:translate(-3px,-2px)}}
-.intro__skip{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:rgba(255,255,255,.45);font:600 .75rem var(--body);letter-spacing:.12em;text-transform:uppercase;z-index:2}
+.brick{position:absolute;height:24px;border-radius:3px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25),inset 0 2px 0 rgba(255,255,255,.08);
+  transition:transform .7s cubic-bezier(.5,0,.85,.4),opacity .5s ease .2s}
+.brick--g1{background:#5d625f}.brick--g2{background:#747a77}.brick--g3{background:#4b4f4d}
+.brick--r{background:#7d3237}.brick--gr{background:#335f42}
+.intro.is-fall .brick{transform:translate(var(--dx),var(--dy)) rotate(var(--rot));opacity:0;transition-delay:var(--d),calc(var(--d) + .25s)}
+.intro.is-nudge .intro__wall{animation:introNudge .22s ease-in-out}
+@keyframes introNudge{30%{transform:translateX(-3px)}60%{transform:translateX(3px)}}
 .intro.is-reduced .intro__wall{display:none}
-.intro.is-reduced .intro__elephant,.intro.is-reduced .intro__wm{animation:none;opacity:1;transform:none}
-@media (min-width:720px){.intro__elephant{width:200px}}

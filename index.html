@@ -14,19 +14,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=6">
-  <script src="assets/js/intro.js?v=6"></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=8">
+  <script src="assets/js/intro.js?v=8"></script>
 </head>
 <body>
   <!-- Intro: plays once per session; tap to skip (assets/js/intro.js) -->
   <div class="intro" id="intro" aria-hidden="true">
-    <div class="intro__stage">
-      <img class="intro__elephant" src="assets/img/emblem.webp" width="330" height="216" alt="">
-      <img class="intro__wm" src="assets/img/wordmark-silver.svg" width="600" height="345" alt="">
+    <div class="intro__glow"></div>
+    <div class="intro__box">
+      <img class="intro__logo" src="assets/img/emblem.webp" width="330" height="216" alt="">
+      <div class="intro__wall"></div>
     </div>
-    <div class="intro__wall"></div>
-    <div class="intro__flash"></div>
-    <p class="intro__skip">Tap to skip</p>
   </div>
 
   <a class="skip" href="#main">Skip to content</a>
@@ -61,8 +59,13 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero">
+      <figure class="hero__photo">
+        <img src="assets/img/hero-team-900.webp"
+             srcset="assets/img/hero-team-900.webp 900w, assets/img/hero-team-1600.webp 1600w"
+             sizes="(min-width:1000px) 56vw, 100vw" width="1600" height="963" fetchpriority="high"
+             alt="Team Smandych members of all ages on the mats, under the Thai and Canadian flags and the gym's elephant painting">
+      </figure>
       <div class="hero__inner">
-        <img class="hero__wordmark" src="assets/img/wordmark-silver.svg" width="600" height="345" alt="">
         <p class="eyebrow"><span class="dot"></span> Downtown Calgary · Since 2010</p>
         <h1>Train Muay Thai in downtown Calgary.<br><em>Your first class is free.</em></h1>
         <p class="hero__lead">All ages 5 and up, all levels — from getting in shape to stepping into the ring.
@@ -169,14 +172,18 @@
     <section class="section section--dark" id="facility" aria-labelledby="faTitle">
       <div class="wrap facility">
         <figure>
-          <img src="assets/img/facility-front-desk.webp" width="892" height="668" loading="lazy"
-               alt="Team Smandych front desk with gym gear on the wall and the training floor and ring behind">
-          <figcaption>Front desk, gear wall and the training floor, with the ring at the back.</figcaption>
+          <img src="assets/img/gym-class-floor-800.webp"
+               srcset="assets/img/gym-class-floor-800.webp 800w, assets/img/gym-class-floor-1400.webp 1400w"
+               sizes="(min-width:720px) 60vw, 100vw" width="1400" height="1141" loading="lazy"
+               alt="A full class on the mats, with fight-night photos, heavy bags and the Thai and Canadian flags on the walls">
+          <figcaption>A full class on the mats — fight-night photos, heavy bags and the Thai and Canadian flags.</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/class-roundhouse-kick.webp" width="592" height="1016" loading="lazy"
-               alt="Fighter throwing a roundhouse kick on a heavy bag">
-          <figcaption>Heavy bags line the training floor.</figcaption>
+          <img src="assets/img/coach-technique-800.webp"
+               srcset="assets/img/coach-technique-800.webp 800w, assets/img/coach-technique-1400.webp 1400w"
+               sizes="(min-width:720px) 40vw, 100vw" width="1400" height="1141" loading="lazy"
+               alt="A coach demonstrating technique to a large group of students">
+          <figcaption>Technique breakdown before partner drills.</figcaption>
         </figure>
         <div class="facility__text">
           <p class="eyebrow eyebrow--green">The gym</p>
@@ -304,7 +311,7 @@
   <!-- Print-only week -->
   <section class="print-week" id="printWeek" aria-hidden="true"></section>
 
-  <script src="assets/js/data.js?v=6"></script>
-  <script src="assets/js/app.js?v=6"></script>
+  <script src="assets/js/data.js?v=8"></script>
+  <script src="assets/js/app.js?v=8"></script>
 </body>
 </html>
