@@ -14,6 +14,7 @@ One goal drives every decision: turn a visit into a booked **free trial class**.
 | `index.html` | Homepage (mobile-first) |
 | `assets/css/styles.css` | All styles |
 | `assets/js/data.js` | Gym info, classes, weekly schedule, coaches — **edit this to update content** |
+| `assets/js/intro.js` | Intro (wall breaks → elephant), once per session; add `?nointro` to the URL to skip it |
 | `assets/js/app.js` | Today/week schedule, booking sheet, printable week |
 | `assets/img/` | Logo and photos used by the site |
 | `brand-kit/` | SVG + PNG logo kit for the client (+ zip) |

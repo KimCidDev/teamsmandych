@@ -264,3 +264,41 @@ body.sheet-open{overflow:hidden}
   .print-week td b{display:block}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ---------- Intro: wall breaks, elephant appears (assets/js/intro.js) ---------- */
+.intro{display:none}
+.intro-on .intro{display:block;position:fixed;inset:0;z-index:100;overflow:hidden;background:#050605;cursor:pointer;transition:opacity .35s ease}
+.intro-on body{overflow:hidden}
+.intro.is-out{opacity:0;pointer-events:none}
+.intro__stage{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding-bottom:12vh;
+  background:radial-gradient(circle at 50% 44%,rgba(52,178,90,.38) 0%,rgba(15,61,34,.45) 28%,rgba(5,6,5,0) 60%)}
+.intro__elephant{width:170px;height:auto;opacity:0;transform:scale(.72);filter:drop-shadow(0 10px 24px rgba(0,0,0,.7)) drop-shadow(0 0 24px rgba(52,178,90,.35))}
+.intro__wm{width:min(62vw,260px);height:auto;opacity:0;transform:translateY(10px)}
+.intro.is-reveal .intro__elephant{animation:introPunch .55s cubic-bezier(.2,1.4,.4,1) forwards}
+.intro.is-reveal .intro__wm{animation:introUp .45s .18s ease-out forwards}
+@keyframes introPunch{0%{opacity:0;transform:scale(.72)}60%{opacity:1;transform:scale(1.07)}100%{opacity:1;transform:scale(1)}}
+@keyframes introUp{to{opacity:1;transform:none}}
+.intro__wall{position:absolute;inset:0}
+.intro__shard{position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 50% 44%,rgba(255,255,255,.05),rgba(0,0,0,.45) 75%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .58 0 0 0 0 .56 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E"),
+    #1f2320;
+  background-size:100% 100%,240px 240px,auto;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
+.intro.is-break .intro__shard{animation:introShard .75s var(--delay,0ms) cubic-bezier(.45,0,.9,.6) forwards;will-change:transform,opacity}
+@keyframes introShard{to{transform:translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.92);opacity:0}}
+.intro__cracks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.intro__cracks path{fill:none;stroke:#050605;stroke-width:3;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 1px 0 rgba(255,255,255,.12))}
+.intro.is-crack .intro__cracks path{transition:stroke-dashoffset .3s ease-out;stroke-dashoffset:0}
+.intro.is-break .intro__cracks{opacity:0;transition:opacity .15s}
+.intro__flash{position:absolute;left:50%;top:44%;width:30vmax;height:30vmax;margin:-15vmax 0 0 -15vmax;border-radius:50%;opacity:0;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,255,255,.9),rgba(95,209,127,.35) 30%,rgba(0,0,0,0) 65%)}
+.intro.is-impact .intro__flash{animation:introFlash .35s ease-out}
+.intro.is-impact .intro__wall{animation:introShake .18s linear}
+@keyframes introFlash{0%{opacity:0;transform:scale(.4)}30%{opacity:1}100%{opacity:0;transform:scale(1.4)}}
+@keyframes introShake{25%{transform:translate(-6px,3px)}50%{transform:translate(5px,-4px)}75%{transform:translate(-3px,-2px)}}
+.intro__skip{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:rgba(255,255,255,.45);font:600 .75rem var(--body);letter-spacing:.12em;text-transform:uppercase;z-index:2}
+.intro.is-reduced .intro__wall{display:none}
+.intro.is-reduced .intro__elephant,.intro.is-reduced .intro__wm{animation:none;opacity:1;transform:none}
+@media (min-width:720px){.intro__elephant{width:200px}}

@@ -14,9 +14,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=4">
+  <link rel="stylesheet" href="assets/css/styles.css?v=6">
+  <script src="assets/js/intro.js?v=6"></script>
 </head>
 <body>
+  <!-- Intro: plays once per session; tap to skip (assets/js/intro.js) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__stage">
+      <img class="intro__elephant" src="assets/img/emblem.webp" width="330" height="216" alt="">
+      <img class="intro__wm" src="assets/img/wordmark-silver.svg" width="600" height="345" alt="">
+    </div>
+    <div class="intro__wall"></div>
+    <div class="intro__flash"></div>
+    <p class="intro__skip">Tap to skip</p>
+  </div>
+
   <a class="skip" href="#main">Skip to content</a>
 
   <!-- Contact strip: address + tap-to-call on every page -->
@@ -292,7 +304,7 @@
   <!-- Print-only week -->
   <section class="print-week" id="printWeek" aria-hidden="true"></section>
 
-  <script src="assets/js/data.js?v=4"></script>
-  <script src="assets/js/app.js?v=4"></script>
+  <script src="assets/js/data.js?v=6"></script>
+  <script src="assets/js/app.js?v=6"></script>
 </body>
 </html>
