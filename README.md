@@ -30,3 +30,9 @@ Static files only. Open `index.html`, or run `python3 -m http.server` and go to 
 - Monthly price (the $159 / $215 duplicate), cancellation terms, parking text, staffed hours
 - Darren Snell's bio and the other 20 instructors' profiles
 - Next seminar / fight night
+
+## Hero photo (pending)
+
+The hero currently uses the vector elephant on the brand-green glow. To use a real HD photo instead:
+save it as `assets/img/hero.webp` (min. 1600 px wide), add `class="hero hero--photo"` to the hero `<section>`
+and put `<img class="hero__bg" src="assets/img/hero.webp" alt="">` as its first child.
