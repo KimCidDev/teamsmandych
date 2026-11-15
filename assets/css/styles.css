@@ -157,7 +157,8 @@ figcaption{color:var(--muted);font-size:.85rem;margin-top:8px}
 /* Facility */
 .facility{display:grid;gap:18px}
 .facility figure{margin:0}
-.facility img{width:100%}
+.facility__text{order:-1}
+.facility img{width:100%;aspect-ratio:4096/3339;object-fit:cover}
 
 /* Visit */
 .visit{display:grid;gap:24px;align-items:start;max-width:720px}
@@ -229,8 +230,8 @@ body.sheet-open{overflow:hidden}
   .cards{grid-template-columns:repeat(2,1fr)}
   .all-classes ul{columns:2}
   .coaches{grid-template-columns:1fr 1fr;align-items:center}
-  .facility{grid-template-columns:1.25fr 1fr;align-items:start}
-  .facility__text{grid-column:1/-1}
+  .facility{grid-template-columns:1fr 1fr;align-items:start;column-gap:24px}
+  .facility__text{grid-column:1/-1;order:-1;margin-bottom:8px}
   .footer__grid{grid-template-columns:1.3fr 1fr 1fr 1fr}
   .sheet__panel{left:50%;right:auto;bottom:50%;transform:translate(-50%,50%);width:min(520px,94vw);border-radius:22px;animation:none}
   .steps{grid-template-columns:repeat(3,1fr)}
