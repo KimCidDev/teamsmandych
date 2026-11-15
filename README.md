@@ -3,7 +3,7 @@
 Concept preview of the new homepage for Team Smandych (downtown Calgary), built by Femik.
 One goal drives every decision: turn a visit into a booked **free trial class**.
 
-- **Status:** prototype (homepage preview to show the owners)
+- **Status:** prototype (homepage preview to show the owners) — published on GitHub Pages
 - **Live preview:** https://kimciddev.github.io/teamsmandych/
 - **Brand kit:** https://kimciddev.github.io/teamsmandych/brand-kit/
 
